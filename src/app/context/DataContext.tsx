@@ -2,17 +2,17 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface DataContextProps {
-  data: string[];
-  setData: React.Dispatch<React.SetStateAction<string[]>>;
+  dataInformation: string[];
+  setDataInformation: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 const DataContext = createContext<DataContextProps | undefined>({} as DataContextProps);
 
 export const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [data, setData] = useState<string[]>([]);
+  const [dataInformation, setDataInformation] = useState<string[]>([]);
 
   return (
-    <DataContext.Provider value={{ data, setData }}>
+    <DataContext.Provider value={{ dataInformation, setDataInformation }}>
       {children}
     </DataContext.Provider>
   );
