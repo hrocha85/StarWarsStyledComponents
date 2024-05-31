@@ -34,10 +34,10 @@ import {
   HomePageContainer,
   TitleLogo,
   Content,
-  CompanyLogo,
+
   MainContent,
   LeftColumn,
-  RocketImage,
+
   RightColumn,
   Title,
   BoxSearch,
@@ -59,7 +59,7 @@ import {
   ResidentsInfo,
   EditButton,
   SaveButton,
-  ErrorContainer,
+
   ErrorMessage,
   ErrorMessageTitle,
   ErrorMessageText,
