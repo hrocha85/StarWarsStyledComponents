@@ -1,16 +1,20 @@
+'use client'
 import styled from 'styled-components';
-import myImage from '../../app/public/img/fundos/fundo_orbita.png'
 
 export const HomePageContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-height: 100vh;
-background-image: url(${myImage})
-background-size: cover;
-background-position: center;
-padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('../../app/public/img/fundos/fundo_orbita.png');
+  background-size: cover;
+  background-position: center;
+  padding-top: 2%;
+  
+  @media (max-width: 768px) {
+ 
+  }
 `;
 
 
@@ -30,12 +34,6 @@ export const CompanyLogo = styled.image`
   margin-bottom: 20px;
 `;
 
-
-export const RocketImage = styled.image`
-  max-width: 400px;
-  display: flex;
-  border-radius: 20px 0px 0px 20px;
-`;
 
 
 
@@ -61,7 +59,13 @@ export const Footer = styled.div`
   background: #f0f0f0;
   padding: 20px 20px;
   margin-bottom: 0;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
+
 
 export const FooterText = styled.p`
   font-size: 14px;
@@ -105,12 +109,12 @@ export const ErrorDescription = styled.p`
 `;
 
 
-
 ////
 
 
 export const Content = styled.div`
   border-radius: 20px;
+  margin: 20px;
 `;
 
 export const MainContent = styled.div`
@@ -118,19 +122,34 @@ export const MainContent = styled.div`
   display: flex;
   max-width: 800px;
   max-height: 400px;
+  flex-direction: row;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    max-width: 100%;
+    max-height: unset;
+  }
 `;
 
 export const LeftColumn = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  max-width: 400px;
-  max-height: 400px;
 
+  max-height: 400px;
+  max-width: 100%;
   .rocketImage {
-    max-width: 400px;
+
     display: flex;
     border-radius: 20px 0px 0px 20px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    .rocketImage {
+      max-width: 100%;
+      border-radius: 20px 20px 0px 0px;
+    }
   }
 `;
 
@@ -145,7 +164,15 @@ export const RightColumn = styled.div`
   padding: 5%;
   background-color: #000000b2;
   border-radius: 0px 20px 20px 0px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    max-height: unset;
+    border-radius: 0px 0px 20px 20px;
+  }
 `;
+
+
 
 export const Title = styled.h2`
   font-family: 'Montserrat', sans-serif;
@@ -154,6 +181,10 @@ export const Title = styled.h2`
   color: white;
   word-break: break-word;
   padding: 2%;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const BoxSearch = styled.div`
@@ -168,11 +199,16 @@ export const BoxSearch = styled.div`
 export const SearchInput = styled.input`
   width: 80%;
   height: 40px;
-  gap: 0px;
   border-radius: 5px;
   padding-left: 2%;
   text-align: center;
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
+
 
 export const SearchButton = styled.button`
   width: 80%;
@@ -186,7 +222,11 @@ export const SearchButton = styled.button`
   align-items: center;
   justify-content: center;
   margin-top: 1.5%;
-  
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
   &:disabled {
     background: #de1212;
     color: white;
@@ -205,15 +245,25 @@ export const BoxIconSearch = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  align-content: center;
   color: #ffffff;
+  margin-top: 10px;
 
   label {
     color: #ffffff;
     margin: 5px;
     font-size: 14px;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+
+    label {
+      margin: 0;
+    }
+  }
 `;
+
 
 ///
 
@@ -224,9 +274,16 @@ export const GridContainer = styled.div`
   background-color: #ffffff;
   border-radius: 20px;
   padding: 16px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin-buttom: 20px;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const VerticalTopLeft = styled.div`
@@ -238,13 +295,26 @@ export const VerticalTopLeft = styled.div`
     margin-left: 5px;
     color: #000000;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 export const VerticalTopRight = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
 `;
+
 
 export const InfosTitleRight = styled.div`
   display: flex;
@@ -337,3 +407,5 @@ export const SaveButton = styled.button`
  
   cursor: pointer;
 `;
+
+

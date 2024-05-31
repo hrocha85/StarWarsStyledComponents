@@ -28,8 +28,7 @@ import Bespin from "../../app/public/img/planetas/planeta_0008_bespin.png";
 import Alderaan from "../../app/public/img/planetas/planeta_0009_alderaan.png";
 import Tatooine from "../../app/public/img/planetas/planeta_0000_tatooine.png";
 
-import myImage from '../../app/public/img/fundos/fundo_orbita.png'
-
+import InputComponent from "../components/InputCompoent";
 
 import {
   HomePageContainer,
@@ -44,12 +43,10 @@ import {
   BoxSearch,
   SearchInput,
   SearchButton,
-  DisabledSearchButton,
   NewSearchButton,
   Footer,
   FooterText,
   BoxIconSearch,
-  BoxIconSearchLabel,
   ColoredBackground,
   GridContainer,
   VerticalTopLeft,
@@ -62,24 +59,19 @@ import {
   ResidentsInfo,
   EditButton,
   SaveButton,
-} from './styles';
-
-
-import {
   ErrorContainer,
   ErrorMessage,
   ErrorMessageTitle,
   ErrorMessageText,
   ErrorDescription,
-} from './errorStyles';
-import { sources } from "next/dist/compiled/webpack/webpack";
+} from './styles';
 
-import InputComponent from "../components/InputCompoent";
+
 
 
 
 function FormPage() {
-  const { dataInformation, setDataInformation } = useContext(DataContext);
+  const { dataInformation, setDataInformation } : any = useContext(DataContext);
 
   const [showPlanet, setShowPlanet] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -241,7 +233,7 @@ const renderDefaultScreen = () => {
     <Content>
       <MainContent>
         <LeftColumn>
-          <Image width={400} src={imgFogrete} alt="Imagem 1" style={{ maxWidth: "100%", display: 'flex', position: "absolute", paddingRight: "200px", zIndex: 1 }} />
+          <Image src={imgFogrete} alt="Imagem 1" style={{ height:"200px",display: 'flex', position: "absolute", paddingRight: "200px", zIndex: 1 }} />
           <Image src={imgFundo} alt="Imagem 2" className="rocketImage" />
         </LeftColumn>
         <RightColumn>

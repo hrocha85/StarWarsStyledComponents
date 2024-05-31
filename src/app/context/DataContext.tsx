@@ -1,9 +1,8 @@
 "use client"
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-
 interface DataContextProps {
-  dataInformation: string[];
-  setDataInformation: React.Dispatch<React.SetStateAction<string[]>>;
+  dataInformation: any;
+  setDataInformation: (data: any) => void;
 }
 
 const DataContext = createContext<DataContextProps | undefined>({} as DataContextProps);
@@ -27,3 +26,4 @@ export const useData = () => {
 };
 
 export default DataContext; // Adicione esta linha para exportar o contexto
+
